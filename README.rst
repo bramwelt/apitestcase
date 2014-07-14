@@ -2,6 +2,9 @@ ApiTestCase
 ===========
 An integration test suite for HTTP APIs.
 
+.. image:: https://travis-ci.org/bramwelt/apitestcase.svg
+    :target: https://travis-ci.org/bramwelt/apitestcase
+
 Uses the requests_ library, and the python unittest_ library to build
 integration tests for web apis.
 
