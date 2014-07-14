@@ -1,6 +1,6 @@
 ApiTestCase
 ===========
-An integration test suite for testing HTTP APIs.
+An integration test suite for HTTP APIs.
 
 Uses the requests_ library, and the python unittest_ library to build
 integration tests for web apis.
