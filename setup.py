@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 import apitestcase
 
@@ -12,4 +12,5 @@ setup(
     license="MIT",
     install_requires=['requests'],
     long_description=open("README.rst").read(),
+    test_suite="test",
 )
