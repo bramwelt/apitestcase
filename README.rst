@@ -21,24 +21,6 @@ unittest.TestCase and use the assert methods to verify your API.
 
     import unittest
 
-    import apitestcase
-
-
-    class ApiTestCase(object):
-        """
-        Add assetion methods for HTTP Requests to TestCase
-        """
-        hosts = []
-
-        def assert_get(endpoint="", status_code=200, body=""):
-            """
-            Asserts GET requests on a given endpoint
-            """
-            for host in hosts:
-                response = requests.get(host+endpoint)
-                self.assertEqual(resonse.status_code, status_code)
-                self.assertContains(response.body, body)
-
 
     class MyApiIntegrationTest(unittest.TestCase, apitestcase.ApiTestCase):
         """
@@ -46,7 +28,7 @@ unittest.TestCase and use the assert methods to verify your API.
         """
         hosts = ["http://staging.example.com", "http://example.com"]
 
-        def test_homepage():
+        def test_homepage(self):
             """
             Tests to make sure our homepage is up on staging and production.
             """
