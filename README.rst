@@ -5,6 +5,12 @@ An integration test suite for testing HTTP APIs.
 Uses the requests_ library, and the python unittest_ library to build
 integration tests for web apis.
 
+The module itself is tested against httpbin_.
+
+.. _requests: http://docs.python-requests.org/
+.. _unittest: http://docs.python.org/3/library/unittest.html
+.. _httpbin: http://httpbin.org/
+
 Usage
 -----
 
