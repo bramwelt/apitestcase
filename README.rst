@@ -11,7 +11,7 @@ Usage
 Simply add the ApiTestCase mixin to your class that extends python's
 unittest.TestCase and use the assert methods to verify your API.
 
-.. codeblock:: python
+.. code-block:: python
 
     import unittest
 
