@@ -10,7 +10,7 @@ class TestCase(object):
     """
     hosts = []
 
-    def assert_get(self, endpoint="", status_code=200, body=""):
+    def assertGet(self, endpoint="", status_code=200, body=""):
         """
         Asserts GET requests on a given endpoint
         """
