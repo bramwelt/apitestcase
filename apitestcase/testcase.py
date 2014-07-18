@@ -17,5 +17,5 @@ class TestCase(object):
             response = requests.get(host+endpoint)
             self.assertEqual(response.status_code, status_code)
             if body:
-                self.assertContains(response.body, body)
+                self.assertIn(body, response.content)
 
