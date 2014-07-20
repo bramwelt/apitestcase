@@ -33,22 +33,22 @@ class TestCase(object):
         """
         Asserts GET requests on a URL
         """
-        return self.assertRequest("GET", *args, **kwargs)
+        self.assertRequest("GET", *args, **kwargs)
 
     def assertPost(self, *args, **kwargs):
         """
         Asserts POST requests on a URL
         """
-        return self.assertRequest("POST", *args, **kwargs)
+        self.assertRequest("POST", *args, **kwargs)
 
     def assertPut(self, *args, **kwargs):
         """
         Asserts PUT requests on a URL
         """
-        return self.assertRequest("PUT", *args, **kwargs)
+        self.assertRequest("PUT", *args, **kwargs)
 
     def assertDelete(self, *args, **kwargs):
         """
         Asserts DELETE requests on a URL
         """
-        return self.assertRequest("DELETE", *args, **kwargs)
+        self.assertRequest("DELETE", *args, **kwargs)
