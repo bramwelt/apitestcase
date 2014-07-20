@@ -18,6 +18,8 @@ class TestCase(object):
             request = requests.get
         elif method is "POST":
             request = requests.post
+        elif method is "PUT":
+            request = requests.put
 
         response = request(url, **kwargs)
         self.assertEqual(response.status_code, status_code)
@@ -36,3 +38,9 @@ class TestCase(object):
         Asserts POST requests on a URL
         """
         return self.assertRequest("POST", *args, **kwargs)
+
+    def assertPut(self, *args, **kwargs):
+        """
+        Asserts PUT requests on a URL
+        """
+        return self.assertRequest("PUT", *args, **kwargs)

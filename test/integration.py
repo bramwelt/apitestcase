@@ -34,3 +34,14 @@ class TestPostMethod(unittest.TestCase, apitestcase.TestCase):
     """
     def test_post(self):
         self.assertPost("http://httpbin.org/post")
+
+    def test_post_args(self):
+        payload = {"foo": "bar"}
+        self.assertPost("http://httpbin.org/post", contains=["bar"], params=payload)
+
+class TestPutMethod(unittest.TestCase, apitestcase.TestCase):
+    """
+    Integration tests for PUT method
+    """
+    def test_put(self):
+        self.assertPut("http://httpbin.org/put")
