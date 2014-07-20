@@ -1,5 +1,3 @@
-import unittest
-
 import requests
 
 
@@ -21,4 +19,3 @@ class TestCase(object):
             elif isinstance(body, list):
                 for content in body:
                     self.assertIn(content, response.content)
-

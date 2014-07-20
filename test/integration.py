@@ -2,6 +2,7 @@ import unittest
 
 import apitestcase
 
+
 class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
     """
     Integration test on GET methods
@@ -17,13 +18,14 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
 
     def test_get_ua(self):
         self.assertGet(self.endpoint+"user-agent",
-                        body="python-requests")
-    
+                       body="python-requests")
+
     def test_get_headers(self):
         self.assertGet(self.endpoint+"headers",
-                        body=["\"Host\": \"httpbin.org\"",
-                              "X-Request-Id",
-                              "Accept"])
+                       body=["\"Host\": \"httpbin.org\"",
+                             "X-Request-Id",
+                             "Accept"])
+
     def test_get_args(self):
         self.assertGet(self.endpoint+"get?foo=bar",
-                        body="\"foo\": \"bar\"")
+                       body="\"foo\": \"bar\"")
