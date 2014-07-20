@@ -5,6 +5,7 @@ import apitestcase
 setup(
     name="apitestcase",
     description="An integration test suite for HTTP APIs",
+    url="https://github.com/bramwelt/apitestcase",
     version=".".join(apitestcase.__version__),
     author="Trevor Bramwell",
     author_email="trevor@bramwell.net",
