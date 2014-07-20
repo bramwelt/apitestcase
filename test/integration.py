@@ -11,18 +11,18 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
         self.assertGet("http://httpbin.org/")
 
     def test_get_ip(self):
-        self.assertGet("http://httpbin.org/ip", body="origin")
+        self.assertGet("http://httpbin.org/ip", contains=["origin"])
 
     def test_get_ua(self):
         self.assertGet("http://httpbin.org/user-agent",
-                       body="python-requests")
+                       contains=["python-requests"])
 
     def test_get_headers(self):
         self.assertGet("http://httpbin.org/headers",
-                       body=["\"Host\": \"httpbin.org\"",
+                       contains=["\"Host\": \"httpbin.org\"",
                              "X-Request-Id",
                              "Accept"])
 
     def test_get_args(self):
         self.assertGet("http://httpbin.org/get?foo=bar",
-                       body="\"foo\": \"bar\"")
+                       contains=["\"foo\": \"bar\""])
