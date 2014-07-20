@@ -7,24 +7,22 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
     """
     Integration test on GET methods
     """
-    hosts = ["http://httpbin.org"]
-
     def test_get(self):
-        self.assertGet("/")
+        self.assertGet("http://httpbin.org/")
 
     def test_get_ip(self):
-        self.assertGet("/ip", body="origin")
+        self.assertGet("http://httpbin.org/ip", body="origin")
 
     def test_get_ua(self):
-        self.assertGet("/user-agent",
+        self.assertGet("http://httpbin.org/user-agent",
                        body="python-requests")
 
     def test_get_headers(self):
-        self.assertGet("/headers",
+        self.assertGet("http://httpbin.org/headers",
                        body=["\"Host\": \"httpbin.org\"",
                              "X-Request-Id",
                              "Accept"])
 
     def test_get_args(self):
-        self.assertGet("/get?foo=bar",
+        self.assertGet("http://httpbin.org/get?foo=bar",
                        body="\"foo\": \"bar\"")
