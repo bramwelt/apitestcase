@@ -27,7 +27,7 @@ class TestCase(object):
         self.assertEqual(response.status_code, status_code)
         if contains:
             for item in contains:
-                self.assertIn(item, response.content)
+                self.assertIn(item, response.text)
 
     def assertGet(self, *args, **kwargs):
         """
