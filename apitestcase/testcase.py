@@ -6,7 +6,8 @@ class TestCase(object):
     Add assetion methods for HTTP Requests to TestCase
     """
 
-    def assertRequest(self, method="GET", url="", status_code=200, contains=None):
+    def assertRequest(self, method="GET", url="", status_code=200,
+            contains=None, **kwargs):
         """
         Asserts requests on a given endpoint
         """
@@ -18,7 +19,7 @@ class TestCase(object):
         elif method is "POST":
             request = requests.post
 
-        response = request(url)
+        response = request(url, **kwargs)
         self.assertEqual(response.status_code, status_code)
         if contains:
             for item in contains:

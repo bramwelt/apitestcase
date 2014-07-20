@@ -24,7 +24,8 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
                              "Accept"])
 
     def test_get_args(self):
-        self.assertGet("http://httpbin.org/get?foo=bar",
+        payload = {"foo": "bar"}
+        self.assertGet("http://httpbin.org/get", params=payload,
                        contains=["\"foo\": \"bar\""])
 
 class TestPostMethod(unittest.TestCase, apitestcase.TestCase):
