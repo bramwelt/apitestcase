@@ -28,6 +28,7 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
         self.assertGet("http://httpbin.org/get", params=payload,
                        contains=["\"foo\": \"bar\""])
 
+
 class TestPostMethod(unittest.TestCase, apitestcase.TestCase):
     """
     Integration tests for POST methods
@@ -39,9 +40,18 @@ class TestPostMethod(unittest.TestCase, apitestcase.TestCase):
         payload = {"foo": "bar"}
         self.assertPost("http://httpbin.org/post", contains=["bar"], params=payload)
 
+
 class TestPutMethod(unittest.TestCase, apitestcase.TestCase):
     """
     Integration tests for PUT method
     """
     def test_put(self):
         self.assertPut("http://httpbin.org/put")
+
+
+class TestDeleteMethod(unittest.TestCase, apitestcase.TestCase):
+    """
+    Integration tests for DELETE method
+    """
+    def test_delete(self):
+        self.assertDelete("http://httpbin.org/delete")

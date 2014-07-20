@@ -20,6 +20,8 @@ class TestCase(object):
             request = requests.post
         elif method is "PUT":
             request = requests.put
+        elif method is "DELETE":
+            request = requests.delete
 
         response = request(url, **kwargs)
         self.assertEqual(response.status_code, status_code)
@@ -44,3 +46,9 @@ class TestCase(object):
         Asserts PUT requests on a URL
         """
         return self.assertRequest("PUT", *args, **kwargs)
+
+    def assertDelete(self, *args, **kwargs):
+        """
+        Asserts DELETE requests on a URL
+        """
+        return self.assertRequest("DELETE", *args, **kwargs)
