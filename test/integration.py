@@ -26,3 +26,10 @@ class TestGetMethod(unittest.TestCase, apitestcase.TestCase):
     def test_get_args(self):
         self.assertGet("http://httpbin.org/get?foo=bar",
                        contains=["\"foo\": \"bar\""])
+
+class TestPostMethod(unittest.TestCase, apitestcase.TestCase):
+    """
+    Integration tests for POST methods
+    """
+    def test_post(self):
+        self.assertPost("http://httpbin.org/post")
