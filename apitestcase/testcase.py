@@ -1,4 +1,3 @@
-import types
 import unittest
 
 import requests
@@ -17,7 +16,7 @@ class TestCase(object):
         for host in self.hosts:
             response = requests.get(host+endpoint)
             self.assertEqual(response.status_code, status_code)
-            if isinstance(body, types.StringType):
+            if isinstance(body, str):
                 self.assertIn(body, response.content)
             elif isinstance(body, list):
                 for content in body:
