@@ -24,12 +24,13 @@ unittest.TestCase and use the assert methods to verify your API.
 
     import unittest
 
+    import apitestcase
+
 
     class MyApiIntegrationTest(unittest.TestCase, apitestcase.ApiTestCase):
         """
         Test my web API
         """
-        hosts = ["http://staging.example.com", "http://example.com"]
 
         def test_homepage(self):
             """
@@ -43,5 +44,5 @@ unittest.TestCase and use the assert methods to verify your API.
                 Order online now!
             """
 
-            self.assert_get("/", body=expected_body)
+            self.assertGet("http://example.com/", contains=[expected_body])
 
